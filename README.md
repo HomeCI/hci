@@ -7,8 +7,10 @@ El script cihome.sh es una herramienta de línea de comandos para controlar los 
 ```bash
 curl https://raw.githubusercontent.com/HomeCI/hci/main/install.sh -o /tmp/install.sh
 chmod +x /tmp/install.sh
-sudo /tmp/install.sh
+/tmp/install.sh
+source ~/.bashrc
 ```
+
 ## Variables de entorno
 
 El script utiliza las siguientes variables de entorno:
