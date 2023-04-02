@@ -1,8 +1,9 @@
 #!/bin/bash
 MY_DIR="tool"
-source .env # Cree un fichero .env 
-export CIP_REPO_PATH=$CIP_REPO_PATH
-export CIP_CORE_PATH=$CIP_CORE_PATH
+source .env # Cree un fichero .env +x con las siguientes variables
+#export CIP_REPO_PATH="path/to/directorio de los docker-compose"
+#export CIP_CORE_PATH="path/to/directorio de los docker-compose"
+
 
 # Se comprueba que la variable de directorio esté definida
 if [ -z "$MY_DIR" ]; then
@@ -23,7 +24,7 @@ chmod +x "$MY_DIR"/*
 sorted_files=($(ls -S "$MY_DIR"))
 
 # Se concatena el contenido de los archivos en un archivo de salida
-output_file="ci.sh"
+output_file="hci.sh"
 echo "#!/bin/bash" > $output_file
 for file in "${sorted_files[@]}"
 do
