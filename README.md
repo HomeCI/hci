@@ -114,4 +114,4 @@ $ hci list
 # Desarrollo
 
 Los scripts se encuentran en la carpeta tool. Para desarrollo modifíquelos y emplee `./compile.sh`.
-Este generará un nuevo script `hci.sh` con los cambios realizados.
+Este generará un nuevo script `hci.sh` como resultado de la unificación de los scripts presentes bajo la carpeta `tool`.
