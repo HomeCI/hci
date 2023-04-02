@@ -41,16 +41,17 @@ create_homeci_folders() {
     mkdir -p "$CLI_PATH"
   fi
 
-  if [ -z "${CIP_CORE_PATH}" ]; then
-    echo "creando el CIP_CORE_PATH"
+  # Exportamos las variables CIP_CORE_PATH y CIP_REPO_PATH si no están definidas
+  if [ -z "${CIP_CORE_PATH}" ] && ! grep -qxF 'export CIP_CORE_PATH='$CORE_PATH ~/.bashrc; then
     echo "export CIP_CORE_PATH=$CORE_PATH" >> ~/.bashrc
   fi
 
-  if [ -z "${CIP_REPO_PATH}" ]; then
-    echo "creando el CIP_REPO_PATH"
+  if [ -z "${CIP_REPO_PATH}" ] && ! grep -qxF 'export CIP_REPO_PATH='$REPO_PATH ~/.bashrc; then
     echo "export CIP_REPO_PATH=$REPO_PATH" >> ~/.bashrc
   fi
-  
+
+  # Recargamos el archivo .bashrc
+ 
   source ~/.bashrc
 
 
