@@ -42,10 +42,12 @@ create_homeci_folders() {
   fi
 
   if [ -z "${CIP_CORE_PATH}" ]; then
+    echo "creando el CIP_CORE_PATH"
     echo "export CIP_CORE_PATH=$CORE_PATH" >> ~/.bashrc
   fi
 
   if [ -z "${CIP_REPO_PATH}" ]; then
+    echo "creando el CIP_REPO_PATH"
     echo "export CIP_REPO_PATH=$REPO_PATH" >> ~/.bashrc
   fi
   
