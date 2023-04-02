@@ -1,12 +1,8 @@
 #!/bin/bash
 
-if [ "$(id -u)" != "0" ]; then
-  echo "La instalación debe ser ejecutado con sudo $0." >&2
-  exit 1
-fi
 
 
-HOME_CI_PATH=/home/HomeCI
+HOME_CI_PATH=/$HOME/HomeCI
 CORE_PATH=$HOME_CI_PATH/core
 REPO_PATH=$HOME_CI_PATH/repo
 CLI_PATH=$HOME_CI_PATH/cli
