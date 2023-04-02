@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ "$(id -u)" != "0" ]; then
+  echo "La instalación debe ser ejecutado con sudo $0." >&2
+  exit 1
+fi
+
+
 HOME_CI_PATH=/home/HomeCI
 CORE_PATH=$HOME_CI_PATH/core
 REPO_PATH=$HOME_CI_PATH/repo
@@ -34,6 +40,18 @@ create_homeci_folders() {
     echo "Creando la carpeta $CLI_PATH"
     mkdir -p "$CLI_PATH"
   fi
+
+  if [ -z "${CIP_CORE_PATH}" ]; then
+    echo "export CIP_CORE_PATH=$CORE_PATH" >> ~/.bashrc
+  fi
+
+  if [ -z "${CIP_REPO_PATH}" ]; then
+    echo "export CIP_REPO_PATH=$REPO_PATH" >> ~/.bashrc
+  fi
+  
+  source ~/.bashrc
+
+
 }
 
 # Llamamos a la función para crear las carpetas necesarias
