@@ -14,7 +14,7 @@ function start() {
   repo_name=$1
   for path in "${REPO_PATHS[@]}"; do
     if [[ -d "$path/$repo_name" ]]; then
-      docker-compose -f "$path/$repo_name/docker-compose.yml" up -d
+      docker compose -f "$path/$repo_name/docker-compose.yml" up -d
       return 0
     fi
   done
@@ -26,7 +26,7 @@ function stop() {
   repo_name=$1
   for path in "${REPO_PATHS[@]}"; do
     if [[ -d "$path/$repo_name" ]]; then
-      docker-compose -f "$path/$repo_name/docker-compose.yml" stop
+      docker compose -f "$path/$repo_name/docker-compose.yml" stop
       return 0
     fi
   done
@@ -38,7 +38,7 @@ function build() {
   repo_name=$1
   for path in "${REPO_PATHS[@]}"; do
     if [[ -d "$path/$repo_name" ]]; then
-      docker-compose -f "$path/$repo_name/docker-compose.yml" up -d --build
+      docker compose -f "$path/$repo_name/docker-compose.yml" up -d --build
       return 0
     fi
   done
