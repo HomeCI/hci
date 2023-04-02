@@ -1,6 +1,6 @@
 # Home CI command
 
-El script cihome.sh es una herramienta de línea de comandos para controlar los contenedores Docker de los repositorios del proyecto CIP.
+El script hci es una herramienta de línea de comandos para controlar los contenedores Docker de los repositorios del proyecto CIP.
 
 ## Instalación
 
@@ -26,13 +26,13 @@ Estas variables deben estar definidas en el entorno antes de usar el script.
 Inicia el contenedor del repositorio indicado.
 
 ```makefile
-Uso: cihome.sh start <nombre-repositorio>
+Uso: hci start <nombre-repositorio>
 ```
 
 Ejemplo:
 
 ```ruby
-$ cihome.sh start mi_repositorio
+$ hci start mi_repositorio
 ```
 
 ### stop
@@ -40,74 +40,78 @@ $ cihome.sh start mi_repositorio
 Detiene el contenedor del repositorio indicado.
 
 ```vbnet
-Uso: cihome.sh stop <nombre-repositorio>
+Uso: hci stop <nombre-repositorio>
 ```
 
 Ejemplo:
 
 ```arduino
-$ cihome.sh stop mi_repositorio
+$ hci stop mi_repositorio
 ```
 
 ### build
 Crea y arranca el contenedor del repositorio indicado.
 
 ```makefile
-Uso: cihome.sh build <nombre-repositorio>
+Uso: hci build <nombre-repositorio>
 ```
 
 Ejemplo:
 
 ```ruby
-$ cihome.sh build mi_repositorio
+$ hci build mi_repositorio
 ```
 
 ### status
 Muestra el estado de todos los contenedores.
 
 ```lua
-Uso: cihome.sh status
+Uso: hci status
 ```
 
 ### logs
 Muestra los logs del contenedor indicado.
 
 ```makefile
-Uso: cihome.sh logs <nombre-repositorio>
+Uso: hci logs <nombre-repositorio>
 ```
 
 Ejemplo:
 
 ```ruby
-$ cihome.sh logs mi_repositorio
+$ hci logs mi_repositorio
 ```
 
 ### exec
 Abre una terminal en el contenedor indicado.
 
 ```bash
-Uso: cihome.sh exec <nombre-repositorio>
+Uso: hci exec <nombre-repositorio>
 ```
 
 Ejemplo:
 
 ```shell
-$ cihome.sh exec mi_repositorio
+$ hci exec mi_repositorio
 ``` 
 
 ### list
 Lista los repositorios disponibles.
 
 ```makefile
-cihome.sh list
+hci list
 ``` 
 
 Ejemplos de uso
 
 ```shell
-$ cihome.sh start mi_repositorio
-$ cihome.sh logs mi_repositorio
-$ cihome.sh exec mi_repositorio
-$ cihome.sh list
+$ hci start mi_repositorio
+$ hci logs mi_repositorio
+$ hci exec mi_repositorio
+$ hci list
 ```
 
+# Desarrollo
+
+Los scripts se encuentran en la carpeta tool. Para desarrollo modifíquelos y emplee `./compile.sh`.
+Este generará un nuevo script `hci.sh` con los cambios realizados.
